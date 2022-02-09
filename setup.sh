@@ -13,7 +13,6 @@ sudo grub2-mkconfig -o /etc/grub2-efi.cfg
 ##### FOLDERS
 mkdir -p \
 ${HOME}/.bashrc.d/ \
-${HOME}/.bashrc.d/exports \
 ${HOME}/.local/bin \
 ${HOME}/src
 
