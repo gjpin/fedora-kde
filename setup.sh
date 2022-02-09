@@ -118,7 +118,13 @@ tee -a ${HOME}/.config/Code/User/settings.json << EOF
     "workbench.enableExperiments": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.iconTheme": "material-icon-theme",
-    "editor.fontWeight": "500"
+    "editor.fontWeight": "500",
+    "redhat.telemetry.enabled": false,
+    "files.associations": {
+        "*.j2": "terraform",
+        "*.hcl": "terraform"
+    },
+    "workbench.colorTheme": "GitHub Dark"
 }
 EOF
 
@@ -126,6 +132,10 @@ code --install-extension PKief.material-icon-theme
 code --install-extension golang.Go
 code --install-extension HashiCorp.terraform
 code --install-extension redhat.ansible
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension editorconfig.editorconfig
+code --install-extension octref.vetur
+code --install-extension github.github-vscode-theme
 
 # Hashistack
 curl -sSL https://releases.hashicorp.com/nomad/${NOMAD_VERSION}/nomad_${NOMAD_VERSION}_linux_amd64.zip -o hashistack-nomad.zip
