@@ -82,7 +82,7 @@ EOF
 cd
 
 ##### APPLICATIONS
-sudo dnf install -y kate htop ansible-core
+sudo dnf install -y kate htop ansible-core jq
 
 # Git
 sudo dnf install -y git-core
