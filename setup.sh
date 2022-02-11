@@ -144,6 +144,10 @@ curl -sSL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terrafor
 unzip 'hashistack-*.zip' -d  ${HOME}/.local/bin
 rm hashistack-*.zip
 
+# Install hey
+curl -sSL https://hey-release.s3.us-east-2.amazonaws.com/hey_linux_amd64 -o ${HOME}/.local/bin/hey
+chmod +x ${HOME}/.local/bin/hey
+
 # Golang
 wget https://golang.org/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz
 rm -rf ${HOME}/.local/go
