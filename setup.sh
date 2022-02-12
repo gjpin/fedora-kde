@@ -24,7 +24,6 @@ flatpak update --appstream
 
 # Install Breeze-GTK flatpak theme and allow Flatpaks to access GTK configs
 sudo flatpak install -y flathub org.gtk.Gtk3theme.Breeze
-sudo flatpak install -y flathub org.gtk.Gtk3theme.Breeze-dark
 sudo flatpak override --filesystem=xdg-config/gtk-3.0:ro
 sudo flatpak override --filesystem=xdg-config/gtk-4.0:ro
 
