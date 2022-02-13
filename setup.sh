@@ -38,11 +38,17 @@ sudo flatpak override --unshare=network org.keepassxc.KeePassXC
 # sudo flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton-Exp
 # sudo flatpak override --filesystem=/run/media/${USER}/data/games/steam com.valvesoftware.Steam
 
-# Install Minigalaxy
-# sudo flatpak install flathub io.github.sharkwouter.Minigalaxy
-# flatpak run --command=sh io.github.sharkwouter.Minigalaxy
-# exit
-# sudo flatpak override --filesystem=/run/media/${USER}/data/games/gog/ io.github.sharkwouter.Minigalaxy
+# Lutris
+# sudo flatpak install flathub-beta net.lutris.Lutris//beta
+# sudo flatpak install flathub org.gnome.Platform.Compat.i386 org.freedesktop.Platform.GL32.default org.freedesktop.Platform.GL.default
+# sudo flatpak override --filesystem=/run/media/${USER}/data/games/lutris/ net.lutris.Lutris
+# mkdir -p ${HOME}/.var/app/net.lutris.Lutris/data/lutris/runners/wine
+
+# ProtonUp-Qt (install and manage Proton-GE and Luxtorpeda for Steam and Wine-GE for Lutris)
+# sudo flatpak install flathub net.davidotek.pupgui2
+
+# MangoHUD
+# sudo flatpak install flathub org.freedesktop.Platform.VulkanLayer.MangoHud
 
 # Install applications
 sudo flatpak install -y flathub com.spotify.Client
