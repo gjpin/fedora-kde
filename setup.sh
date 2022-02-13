@@ -36,7 +36,13 @@ sudo flatpak override --unshare=network org.keepassxc.KeePassXC
 # sudo flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton
 # sudo flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 # sudo flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton-Exp
-# sudo flatpak override --filesystem=/media/${USER}/data/games/steam com.valvesoftware.Steam
+# sudo flatpak override --filesystem=/run/media/${USER}/data/games/steam com.valvesoftware.Steam
+
+# Install Minigalaxy
+# sudo flatpak install flathub io.github.sharkwouter.Minigalaxy
+# flatpak run --command=sh io.github.sharkwouter.Minigalaxy
+# exit
+# sudo flatpak override --filesystem=/run/media/${USER}/data/games/gog/ io.github.sharkwouter.Minigalaxy
 
 # Install applications
 sudo flatpak install -y flathub com.spotify.Client
