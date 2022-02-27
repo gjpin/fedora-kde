@@ -1,9 +1,9 @@
 ##### Versions
 GOLANG_VERSION=1.17.7
-NOMAD_VERSION=1.2.5
-CONSUL_VERSION=1.11.2
+NOMAD_VERSION=1.2.6
+CONSUL_VERSION=1.11.3
 VAULT_VERSION=1.9.3
-TERRAFORM_VERSION=1.1.4
+TERRAFORM_VERSION=1.1.6
 
 # Set grub2 timeout to 0
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
@@ -30,25 +30,6 @@ sudo flatpak override --filesystem=xdg-config/gtk-4.0:ro
 # Install KeePassXC
 sudo flatpak install -y flathub org.keepassxc.KeePassXC
 sudo flatpak override --unshare=network org.keepassxc.KeePassXC
-
-# Install Steam
-# sudo flatpak install -y flathub com.valvesoftware.Steam
-# sudo flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton
-# sudo flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-# sudo flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton-Exp
-# sudo flatpak override --filesystem=/run/media/${USER}/data/games/steam com.valvesoftware.Steam
-
-# Lutris
-# sudo flatpak install flathub-beta net.lutris.Lutris//beta
-# sudo flatpak install flathub org.gnome.Platform.Compat.i386 org.freedesktop.Platform.GL32.default org.freedesktop.Platform.GL.default
-# sudo flatpak override --filesystem=/run/media/${USER}/data/games/lutris/ net.lutris.Lutris
-# mkdir -p ${HOME}/.var/app/net.lutris.Lutris/data/lutris/runners/wine
-
-# ProtonUp-Qt (install and manage Proton-GE and Luxtorpeda for Steam and Wine-GE for Lutris)
-# sudo flatpak install flathub net.davidotek.pupgui2
-
-# MangoHUD
-# sudo flatpak install flathub org.freedesktop.Platform.VulkanLayer.MangoHud
 
 # Install applications
 sudo flatpak install -y flathub com.spotify.Client
@@ -78,7 +59,7 @@ EOF
 # Install Firefox and enable hardware acceleration
 sudo dnf remove -y firefox
 sudo flatpak install -y flathub org.mozilla.firefox
-#sudo flatpak override --socket=wayland --env=MOZ_ENABLE_WAYLAND=1 org.mozilla.firefox
+sudo flatpak override --socket=wayland --env=MOZ_ENABLE_WAYLAND=1 org.mozilla.firefox
 
 # Open Firefox in headless mode and then close it to create profile folder
 timeout 5 flatpak run org.mozilla.firefox --headless
@@ -132,9 +113,12 @@ tee -a ${HOME}/.config/Code/User/settings.json << EOF
     "redhat.telemetry.enabled": false,
     "files.associations": {
         "*.j2": "terraform",
-        "*.hcl": "terraform"
+        "*.hcl": "terraform",
+        "*.bu": "yaml",
+        "*.ign": "json"
     },
-    "workbench.colorTheme": "GitHub Dark"
+    "workbench.colorTheme": "GitHub Dark",
+    "extensions.ignoreRecommendations": true
 }
 EOF
 
@@ -190,10 +174,6 @@ sudo dnf remove -y akregator kruler qt-qdbusviewer qt5-qdbusviewer kget konversa
 kwriteconfig5 --file kdeglobals --group KDE --key LookAndFeelPackage "org.kde.breezetwilight.desktop"
 kwriteconfig5 --file kdeglobals --group KDE --key SingleClick --type bool true
 kwriteconfig5 --file kdeglobals --group KDE --key AnimationDurationFactor "0.5"
-
-# Enable OpenGL 3.1
-kwriteconfig5 --file kwinrc --group Compositing --key GLCore --type bool true
-kwriteconfig5 --file kwinrc --group Compositing --key OpenGLIsUnsafe --type bool false
 
 # Enable 2 desktops
 kwriteconfig5 --file kwinrc --group Desktops --key Name_2 "Desktop 2"
