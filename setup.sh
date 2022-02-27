@@ -225,7 +225,7 @@ kwriteconfig5 --file klaunchrc --group FeedbackStyle --key "BusyCursor" --type b
 
 # Autologin
 sudo kwriteconfig5 --file /etc/sddm.conf.d/kde_settings.conf --group Autologin --key "Relogin" --type bool false
-sudo kwriteconfig5 --file /etc/sddm.conf.d/kde_settings.conf --group Autologin --key "Session" "plasmax11"
+sudo kwriteconfig5 --file /etc/sddm.conf.d/kde_settings.conf --group Autologin --key "Session" "plasma"
 sudo kwriteconfig5 --file /etc/sddm.conf.d/kde_settings.conf --group Autologin --key "User" "${USER}"
 
 # SDDM theme
