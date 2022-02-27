@@ -231,6 +231,10 @@ sudo kwriteconfig5 --file /etc/sddm.conf.d/kde_settings.conf --group Autologin -
 # SDDM theme
 sudo kwriteconfig5 --file /etc/sddm.conf.d/kde_settings.conf --group Theme --key "Current" "breeze"
 
+# Enable overview
+sudo kwriteconfig5 --file kwinrc --group Plugins --key "overviewEnabled" --type bool true
+kwriteconfig5 --file kglobalshortcutsrc --group kwin --key "Overview" "Meta+Tab,none,Toggle Overview"
+
 # Use KDE Wallet to store ssh key passphrases
 mkdir -p ~/.config/autostart/
 tee -a ~/.config/autostart/ssh-add.desktop << EOF
@@ -291,9 +295,6 @@ kwriteconfig5 --file kglobalshortcutsrc --group org.kde.konsole.desktop --key "_
 
 # Close windows
 kwriteconfig5 --file kglobalshortcutsrc --group kwin --key "Window Close" "Meta+Shift+Q,none,Close Window"
-
-# Present windows
-kwriteconfig5 --file kglobalshortcutsrc --group kwin --key "Expose" "Meta+Tab,none,Toggle Present Windows (Current desktop)"
 
 # Spectacle
 kwriteconfig5 --file kglobalshortcutsrc --group "org.kde.spectacle.desktop" --key "RectangularRegionScreenShot" "Meta+Shift+S,none,Capture Rectangular Region"
