@@ -232,6 +232,7 @@ sudo kwriteconfig5 --file /etc/sddm.conf.d/kde_settings.conf --group Autologin -
 sudo kwriteconfig5 --file /etc/sddm.conf.d/kde_settings.conf --group Theme --key "Current" "breeze"
 
 # Use KDE Wallet to store ssh key passphrases
+mkdir -p ~/.config/autostart/
 tee -a ~/.config/autostart/ssh-add.desktop << EOF
 [Desktop Entry]
 Exec=ssh-add -q /home/$USER/.ssh/id_ed25519
@@ -239,6 +240,7 @@ Name=ssh-add
 Type=Application
 EOF
 
+mkdir -p ~/.config/plasma-workspace/env/
 tee -a ~/.config/plasma-workspace/env/askpass.sh << EOF
 #!/bin/sh
 export SSH_ASKPASS='/usr/bin/ksshaskpass'
