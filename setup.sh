@@ -44,8 +44,6 @@ tee -a ~/.var/app/com.google.Chrome/config/chrome-flags.conf << EOF
 --enable-gpu-rasterization
 --enable-zero-copy
 --enable-features=VaapiVideoDecoder
---enable-features=UseOzonePlatform
---ozone-platform=wayland
 EOF
 
 # Install Chromium and enable GPU acceleration
@@ -56,8 +54,6 @@ tee -a ~/.var/app/org.chromium.Chromium/config/chromium-flags.conf << EOF
 --enable-gpu-rasterization
 --enable-zero-copy
 --enable-features=VaapiVideoDecoder
---enable-features=UseOzonePlatform
---ozone-platform=wayland
 EOF
 
 # Install Firefox and enable hardware acceleration
