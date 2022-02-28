@@ -1,4 +1,8 @@
 # Fedora KDE
+
+## Chrome / Chromium
+To be able to share the screen under wayland, enable "WebRTC Pipewire support" and "Use ozone" in chrome://flags
+
 ## chroot into system (nvme drive + encrypted /)
 Go into live mode and then run:
 ```
