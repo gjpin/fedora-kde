@@ -73,7 +73,6 @@ cd ${HOME}/.var/app/org.mozilla.firefox/.mozilla/firefox/*-release
 tee -a user.js << EOF
 // Enable hardware acceleration
 user_pref("media.ffmpeg.vaapi.enabled", true);
-user_pref("media.rdd-ffmpeg.enabled", true);
 EOF
 cd
 
