@@ -44,6 +44,8 @@ tee -a ~/.var/app/com.google.Chrome/config/chrome-flags.conf << EOF
 --enable-gpu-rasterization
 --enable-zero-copy
 --enable-features=VaapiVideoDecoder
+--enable-features=UseOzonePlatform
+--ozone-platform=wayland
 EOF
 
 # Install Chromium and enable GPU acceleration
@@ -54,6 +56,8 @@ tee -a ~/.var/app/org.chromium.Chromium/config/chromium-flags.conf << EOF
 --enable-gpu-rasterization
 --enable-zero-copy
 --enable-features=VaapiVideoDecoder
+--enable-features=UseOzonePlatform
+--ozone-platform=wayland
 EOF
 
 # Install Firefox and enable hardware acceleration
@@ -130,6 +134,12 @@ code --install-extension dbaeumer.vscode-eslint
 code --install-extension editorconfig.editorconfig
 code --install-extension octref.vetur
 code --install-extension github.github-vscode-theme
+
+# Enable Wayland for Electron
+tee -a ${HOME}/.config/electron-flags.conf << EOF
+--enable-features=UseOzonePlatform
+--ozone-platform=wayland
+EOF
 
 # Hashistack
 curl -sSL https://releases.hashicorp.com/nomad/${NOMAD_VERSION}/nomad_${NOMAD_VERSION}_linux_amd64.zip -o hashistack-nomad.zip
