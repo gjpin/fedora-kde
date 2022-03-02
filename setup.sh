@@ -156,7 +156,7 @@ grep -qxF 'export PATH=$PATH:${HOME}/.local/go/bin' ${HOME}/.bashrc.d/exports ||
 rm go${GOLANG_VERSION}.linux-amd64.tar.gz
 
 # Node.js 16
-sudo dnf module install -y nodejs:16/default
+sudo dnf module install -y nodejs:16
 
 ##### KDE
 # Disable baloo (file indexer)
