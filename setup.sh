@@ -73,7 +73,7 @@ EOF
 cd
 
 ##### APPLICATIONS
-sudo dnf install -y kate htop ansible-core jq
+sudo dnf install -y kate htop ansible-core jq wireguard-tools
 
 # Git
 sudo dnf install -y git-core
